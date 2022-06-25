@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -27,7 +27,7 @@ requirements:
     - jinja2
     - joblib
     - matplotlib-base
-    - mne >=1.0.0
+    - mne-base >=1.0
     - numpy >=1.20.0
     - pooch
     - python >=3.7
