@@ -1,5 +1,5 @@
 {% set name = "pycrostates" %}
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pycrostates-{{ version }}.tar.gz
-  sha256: 8a9292d5f7cae08ac7aaf492460577305fb41ae05a08d0f79f5aaabbae411a43
+  sha256: c7247b0968c289461a7d9a3ccae09d2c917692c01b3052ba014a95f763527075
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
