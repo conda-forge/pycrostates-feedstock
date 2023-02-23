@@ -12,25 +12,24 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python >=3.8
     - setuptools >=61.0.0
     - wheel
   run:
     - decorator
-    - importlib-metadata
-    - importlib-resources
+    - importlib-resources  # Normally only needed for py<39, but we're going noarch here!
     - jinja2
     - joblib
     - matplotlib-base
     - mne-base >=1.0
     - numpy >=1.21
     - pooch
-    - python >=3.7
+    - python >=3.8
     - scikit-learn
     - scipy
 
