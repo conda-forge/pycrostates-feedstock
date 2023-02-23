@@ -22,6 +22,7 @@ requirements:
     - wheel
   run:
     - decorator
+    - importlib-resources  # Normally only needed for py<39, but we're going noarch here!
     - jinja2
     - joblib
     - matplotlib-base
