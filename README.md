@@ -1,11 +1,11 @@
-About pycrostates
-=================
+About pycrostates-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pycrostates-feedstock/blob/main/LICENSE.txt)
 
 Home: https://pycrostates.readthedocs.io/en/latest/
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pycrostates-feedstock/blob/main/LICENSE.txt)
 
 Summary: A simple open source Python package for EEG microstate segmentation.
 
