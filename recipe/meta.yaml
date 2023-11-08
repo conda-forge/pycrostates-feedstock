@@ -1,5 +1,5 @@
 {% set name = "pycrostates" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,28 +7,31 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pycrostates-{{ version }}.tar.gz
-  sha256: 7d5d48965769034290cf5b9709831df36d7c55eab94d0342efcc752daf98c96c
+  sha256: 9b6ac0de08820f43e7257b1b4e6e73d5bd8f70f827dc482e0ad91503b06875df
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
+  entry_points:
+    - pycrostates-sys_info = pycrostates.commands.sys_info:run
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python >=3.9
     - setuptools >=64.0.0
   run:
     - decorator
-    - importlib-resources  # Normally only needed for py<39, but we're going noarch here!
     - jinja2
     - joblib
-    - matplotlib-base
-    - mne-base >=1.0
+    - matplotlib-base >=3.5
+    - mne-base >=1.2
     - numpy >=1.21
+    - packaging
     - pooch
-    - python >=3.8
+    - psutil
+    - python >=3.9
     - scikit-learn
     - scipy
 
@@ -37,6 +40,7 @@ test:
     - pycrostates
   commands:
     - pip check
+    - pycrostates-sys_info
   requires:
     - pip
 
