@@ -40,7 +40,7 @@ test:
     - pycrostates
   commands:
     - pip check
-    - pcrostates-sys_info
+    - pycrostates-sys_info
   requires:
     - pip
 
