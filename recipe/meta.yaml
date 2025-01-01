@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pycrostates-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pycrostates-{{ version }}.tar.gz
   sha256: 62cccd98f43ed4ebf8d4a38f55f20c389b309c7f4637a1ef2d28543338aa5150
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   entry_points:
     - pycrostates-sys_info = pycrostates.commands.sys_info:run
 
 requirements:
   host:
     - pip
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools >=64.0.0
   run:
     - decorator
@@ -31,7 +31,7 @@ requirements:
     - packaging
     - pooch
     - psutil
-    - python >=3.9
+    - python >={{ python_min }}
     - scikit-learn
     - scipy
 
@@ -43,6 +43,7 @@ test:
     - pycrostates-sys_info
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pycrostates.readthedocs.io/en/latest/
